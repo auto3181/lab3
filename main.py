@@ -46,9 +46,9 @@ with open('result.bmp', 'w+b') as f:  # Открываю файл на запи�
     f.write((0).to_bytes(4, byteorder='little'))
     f.write((0).to_bytes(4, byteorder='little'))
 
-    for y_counter in range(600):  # красим пиксели черным,если их занчение есть в списке всех значений
+    for y_counter in range(height):  # красим пиксели черным,если их занчение есть в списке всех значений
         Ox_offset = width/(-200.0)
-        for x_counter in range(600):
+        for x_counter in range(width):
             if (Ox_offset, Oy_offset) in all_values:
                 f.write(b'\x00\x00\x00\xFF')
             else:
